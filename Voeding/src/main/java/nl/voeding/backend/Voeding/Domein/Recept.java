@@ -22,4 +22,3 @@ public class Recept {
     List<Product> producten;
 
 }
-//https://0111.nl/ubuntutouch/
