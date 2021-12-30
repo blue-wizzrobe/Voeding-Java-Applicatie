@@ -11,4 +11,19 @@ public class Product {
     @GeneratedValue(strategy = GenerationType.AUTO)
     long id;
 	String naam;
+	
+	public long getId() {
+		return id;
+	}
+	public void setId(long id) {
+		this.id = id;
+	}
+	public String getNaam() {
+		return naam;
+	}
+	public void setNaam(String naam) {
+		this.naam = naam;
+	}
+	
+	
 }
