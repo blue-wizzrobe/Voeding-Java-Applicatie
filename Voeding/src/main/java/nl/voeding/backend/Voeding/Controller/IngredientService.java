@@ -18,6 +18,4 @@ public class IngredientService {
         Iterable <Ingredient> result = ir.findAll();
         return result;
     }
-
-
 }

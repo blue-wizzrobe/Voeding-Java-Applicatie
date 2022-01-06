@@ -1,36 +1,35 @@
 package nl.voeding.backend.Voeding.Api;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
-
 import nl.voeding.backend.Voeding.Controller.IngredientService;
 import nl.voeding.backend.Voeding.Domein.Ingredient;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class IngredientEndpoint {
 
     @Autowired
-    IngredientService ps;
+    IngredientService is;
 
-    @PostMapping("producten")
+    @PostMapping("ingredienten")
     public Ingredient myMethod4(@RequestBody Ingredient data) {
-        ps.save(data);
+        is.save(data);
         return data;
     }
 
-    @GetMapping("productlijst")
+    @GetMapping("ingredientenlijst")
     public Iterable<Ingredient> myMethod4() {
-        Iterable<Ingredient> products = ps.findAll();
-        return products;
+        Iterable<Ingredient> ingredienten = is.findAll();
+        return ingredienten;
     }
 
-    @GetMapping("product/{data}")
+    @GetMapping("ingredient/{data}")
     public Ingredient myMethod4(@PathVariable String data) {
-        Ingredient p = new Ingredient();
-        p.setNaam(data);
+        Ingredient i = new Ingredient();
+        i.setNaam(data);
         System.out.println(data);
-        ps.save(p);
-        return p;
+        is.save(i);
+        return i;
     }
 
 }
