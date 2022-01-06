@@ -3,9 +3,7 @@ package nl.voeding.backend.Voeding.Api;
 import nl.voeding.backend.Voeding.Controller.ReceptService;
 import nl.voeding.backend.Voeding.Domein.Recept;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class ReceptEndpoint {
@@ -26,5 +24,14 @@ public class ReceptEndpoint {
 		Iterable<Recept> recepten = rs.findAll();
 		return recepten;
 	}
+
+	@PostMapping("receptaanuser/{user_id}")
+	public String addUser(@PathVariable long user_id, @RequestBody Recept recept){
+		System.out.println(user_id);
+		System.out.println(recept.getNaam());
+		rs.receptAanUser(user_id, recept);
+		return "gelukt";
+	}
+
 
 }
