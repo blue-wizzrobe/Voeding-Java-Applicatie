@@ -23,4 +23,10 @@ public class ReceptEndpoint {
         rs.save(r);
 	}
 
+	@GetMapping("receptenlijst")
+	public Iterable<Recept> myMethod4() {
+		Iterable<Recept> recepten = rs.findAll();
+		return recepten;
+	}
+
 }
