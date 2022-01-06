@@ -21,7 +21,7 @@ public class Recept {
 	private List<Receptingredient> receptingredients;
 
 	@ManyToOne
-	@JoinColumn(name = "user_id")
+//	@JoinColumn(name = "user_id")
 	private User user;
 
 	public long getId() {

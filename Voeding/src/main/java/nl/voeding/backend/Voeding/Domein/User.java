@@ -13,11 +13,11 @@ public class User {
 	private String wachtwoord;
 	private String email;
 
-	@ManyToMany
-	private List<Recept> bewaardeRecepten;
-
-	@OneToMany(mappedBy = "user")
-	private List<Recept> gemaakteRecepten;
+//	@ManyToMany
+//	private List<Recept> bewaardeRecepten;
+//
+//	@OneToMany(mappedBy = "user")
+//	private List<Recept> gemaakteRecepten;
 
 	public long getId() {
 		return id;
@@ -51,19 +51,19 @@ public class User {
 		this.email = email;
 	}
 
-	public List<Recept> getBewaardeRecepten() {
-		return bewaardeRecepten;
-	}
+//	public List<Recept> getBewaardeRecepten() {
+//		return bewaardeRecepten;
+//	}
+//
+//	public void setBewaardeRecepten(List<Recept> bewaardeRecepten) {
+//		this.bewaardeRecepten = bewaardeRecepten;
+//	}
 
-	public void setBewaardeRecepten(List<Recept> bewaardeRecepten) {
-		this.bewaardeRecepten = bewaardeRecepten;
-	}
-
-	public List<Recept> getGemaakteRecepten() {
-		return gemaakteRecepten;
-	}
-
-	public void setGemaakteRecepten(List<Recept> gemaakteRecepten) {
-		this.gemaakteRecepten = gemaakteRecepten;
-	}
+//	public List<Recept> getGemaakteRecepten() {
+//		return gemaakteRecepten;
+//	}
+//
+//	public void setGemaakteRecepten(List<Recept> gemaakteRecepten) {
+//		this.gemaakteRecepten = gemaakteRecepten;
+//	}
 }
