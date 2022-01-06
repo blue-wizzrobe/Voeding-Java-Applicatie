@@ -6,11 +6,16 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Eenheid {
+public class Admin extends User {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
-    private String eenheid;
+    private Boolean admin;
+
+    public Admin() {
+        this.admin = true;
+    }
 
     public long getId() {
         return id;
@@ -20,11 +25,11 @@ public class Eenheid {
         this.id = id;
     }
 
-    public String getEenheid() {
-        return eenheid;
+    public Boolean getAdmin() {
+        return admin;
     }
 
-    public void setEenheid(String eenheid) {
-        this.eenheid = eenheid;
+    public void setAdmin(Boolean admin) {
+        this.admin = admin;
     }
 }

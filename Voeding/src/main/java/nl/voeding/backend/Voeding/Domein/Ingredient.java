@@ -7,25 +7,17 @@ import java.util.List;
 public class Ingredient {
 	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    long id;
-	String naam;
-
-
+    private long id;
+	private String naam;
 
 	@OneToMany(mappedBy = "ingredient")
-	List<Receptingredient> receptingredients;
-	
+	private List<Receptingredient> receptingredients;
+
 	public long getId() {
 		return id;
 	}
+
 	public void setId(long id) {
 		this.id = id;
 	}
-	public String getNaam() {
-		return naam;
-	}
-	public void setNaam(String naam) {
-		this.naam = naam;
-	}
-
 }
