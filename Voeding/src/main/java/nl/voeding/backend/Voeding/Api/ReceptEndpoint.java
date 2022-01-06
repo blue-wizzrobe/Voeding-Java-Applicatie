@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import nl.voeding.backend.Voeding.Controller.ReceptService;
-import nl.voeding.backend.Voeding.Domein.Product;
+import nl.voeding.backend.Voeding.Domein.Ingredient;
 import nl.voeding.backend.Voeding.Domein.Recept;
 
 @RestController
