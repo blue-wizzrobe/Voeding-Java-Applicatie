@@ -14,6 +14,7 @@ target/
 .sts4-cache
 *.properties
 /.mvn/**
+
 ### IntelliJ IDEA ###
 .idea
 *.iws

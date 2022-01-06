@@ -1,16 +1,19 @@
 package nl.voeding.backend.Voeding.Domein;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
-public class Product {
+public class Ingredient {
 	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     long id;
 	String naam;
+
+
+
+	@OneToMany(mappedBy = "ingredient")
+	List<Receptingredient> receptingredients;
 	
 	public long getId() {
 		return id;
@@ -24,6 +27,5 @@ public class Product {
 	public void setNaam(String naam) {
 		this.naam = naam;
 	}
-	
-	
+
 }
