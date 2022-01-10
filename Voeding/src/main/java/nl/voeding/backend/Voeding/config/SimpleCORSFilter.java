@@ -1,32 +1,35 @@
 package nl.voeding.backend.Voeding.config;
 
-import org.springframework.stereotype.Component;
-import javax.servlet.*;
-import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+
+import javax.servlet.Filter;
+import javax.servlet.FilterChain;
+import javax.servlet.FilterConfig;
+import javax.servlet.ServletException;
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
+import javax.servlet.http.HttpServletResponse;
+
+import org.springframework.stereotype.Component;
 
 @Component
 public class SimpleCORSFilter implements Filter {
-    @Override
-    public void init(FilterConfig filterConfig) throws ServletException {
-    }
-
-    @Override
-    public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
+    public void doFilter(ServletRequest req, ServletResponse res, FilterChain chain)
             throws IOException, ServletException {
-        if (response instanceof HttpServletResponse) {
-            HttpServletResponse r = (HttpServletResponse) response;
-            r.setHeader("Access-Control-Allow-Origin", "*");
-            r.setHeader("Access-Control-Allow-Methods", "POST, GET, OPTIONS, DELETE");
-            r.setHeader("Access-Control-Max-Age", "3600");
-            r.setHeader("Access-Control-Allow-Headers", "x-requested-with");
-            chain.doFilter(request, response);
-        } else {
-            throw new ServletException("CORS works only for HTTP");
-        }
+        HttpServletResponse response = (HttpServletResponse) res;
+        response.setHeader("Access-Control-Allow-Origin", "*");
+        response.setHeader("Access-Control-Allow-Methods", "POST, GET, OPTIONS, DELETE, PUT");
+        response.setHeader("Access-Control-Max-Age", "36000");
+        response.setHeader("Access-Control-Allow-Headers", "origin, content-type, accept");
+        response.setHeader("cache-control", "max-age=31536000");
+        response.setHeader("Content-type", "application/json; charset=utf-8");
+        chain.doFilter(req, res);
     }
 
-    @Override
+    public void init(FilterConfig filterConfig) {
+    }
+
     public void destroy() {
     }
+
 }

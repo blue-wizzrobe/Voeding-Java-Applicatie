@@ -33,5 +33,4 @@ public class ReceptEndpoint {
 		return "gelukt";
 	}
 
-
 }
