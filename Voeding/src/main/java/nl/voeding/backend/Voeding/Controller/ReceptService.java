@@ -1,6 +1,5 @@
 package nl.voeding.backend.Voeding.Controller;
 
-
 import nl.voeding.backend.Voeding.Domein.Recept;
 import nl.voeding.backend.Voeding.Domein.User;
 import org.springframework.beans.factory.annotation.Autowired;
