@@ -33,4 +33,9 @@ public class ReceptEndpoint {
 		return "gelukt";
 	}
 
+	@GetMapping("test")
+	public String testfunctie(){
+		return "alles werkt";
+	}
+
 }
