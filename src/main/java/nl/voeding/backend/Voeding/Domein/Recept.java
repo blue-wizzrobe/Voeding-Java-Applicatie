@@ -1,9 +1,7 @@
 package nl.voeding.backend.Voeding.Domein;
 
 import javax.persistence.*;
-import java.net.URL;
 import java.util.List;
-
 
 @Entity
 public class Recept {
@@ -15,7 +13,7 @@ public class Recept {
     private String naam;
 	private int bereidingstijd;
 	private String bereiding;
-	private URL afbeelding;
+	private String afbeelding;
 
 	@OneToMany(mappedBy = "recept")
 	private List<Receptingredient> receptingredients;
@@ -64,11 +62,11 @@ public class Recept {
 		this.bereiding = bereiding;
 	}
 
-	public URL getAfbeelding() {
+	public String getAfbeelding() {
 		return afbeelding;
 	}
 
-	public void setAfbeelding(URL afbeelding) {
+	public void setAfbeelding(String afbeelding) {
 		this.afbeelding = afbeelding;
 	}
 
