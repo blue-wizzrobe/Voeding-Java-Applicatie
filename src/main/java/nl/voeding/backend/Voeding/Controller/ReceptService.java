@@ -5,6 +5,8 @@ import nl.voeding.backend.Voeding.Domein.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -29,5 +31,19 @@ public class ReceptService {
         recept.setUser(user);
         rr.save(recept);
     }
+    
+    public List <Recept> zoekRecept(String invoer) {
+		    Iterable<Recept> go = rr.findAll();
+		    List<Recept> result = new ArrayList<>();
+
+		        for (Recept str : go) {
+		            if(str.getNaam().toLowerCase().contains(invoer.toLowerCase())) {
+		                result.add(str);
+		            }
+		        }
+		        
+		    return result;
+		
+	}
 
 }
