@@ -30,4 +30,10 @@ public class ReceptEndpoint {
 		rs.receptAanUser(user_id, recept);
 		return "gelukt";
 	}
+	
+	@GetMapping("zoek/{invoer}")
+	public Iterable<Recept> zoekRecept(@PathVariable String invoer) {
+	Iterable<Recept> resultaat = rs.zoekRecept(invoer);
+	return resultaat ;
+	}
 }
