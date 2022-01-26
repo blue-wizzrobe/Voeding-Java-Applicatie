@@ -23,7 +23,7 @@ public class UserEndpoint {
         return users;
     }
 
-    @GetMapping("ingredient/{data}")
+    @GetMapping("user/{data}")
     public User myMethod4(@PathVariable String data) {
         User u = new User();
         u.setNaam(data);
