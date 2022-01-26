@@ -12,7 +12,7 @@ public class Recept {
 	private String beschrijving;
     private String naam;
 	private int bereidingstijd;
-	@Lob
+	@Column(length=512)
 	private String bereiding;
 	private String afbeelding;
 
