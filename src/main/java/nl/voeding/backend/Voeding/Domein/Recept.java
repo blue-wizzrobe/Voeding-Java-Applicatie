@@ -12,6 +12,7 @@ public class Recept {
 	private String beschrijving;
     private String naam;
 	private int bereidingstijd;
+	@Lob
 	private String bereiding;
 	private String afbeelding;
 
