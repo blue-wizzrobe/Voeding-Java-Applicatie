@@ -40,3 +40,4 @@ build/
 ._* .Trashes 
 ehthumbs.db 
 Thumbs.db
+/bin/
